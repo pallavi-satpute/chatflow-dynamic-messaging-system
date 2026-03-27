@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write New Chat</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #dbeafe, #e0f2fe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            width: 350px;
+            transition: transform 0.2s ease;
+        }
+
+        .form-container:hover {
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1e3a8a;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 14px;
+            transition: border 0.2s ease;
+        }
+
+        input:focus, textarea:focus {
+            border: 1px solid #2563eb;
+        }
+
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #2563eb;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h3>💬 Write New Chat</h3>
+
+        <form method="POST" action="/chats">
+            
+            <input placeholder="Who are you?" name="from" required/>
+            <br><br>
+
+            <textarea name="msg" placeholder="Write your message here..." required></textarea>
+            <br><br>
+            
+            <input placeholder="Receiver name" name="to" required/>
+            <br><br>
+
+            <button type="submit">Create Chat</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
